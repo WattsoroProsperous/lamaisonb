@@ -3306,6 +3306,100 @@ footer {
         display: none;
     }
 
+    /* VIP Section Responsive */
+    .vip-showcase {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .vip-image-side {
+        max-height: 300px;
+    }
+
+    .vip-floating-badge {
+        bottom: 15px;
+        left: 15px;
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+
+    .vip-floating-badge i {
+        font-size: 1.2rem;
+    }
+
+    .vip-cards-side {
+        gap: 20px;
+    }
+
+    .vip-card-new {
+        padding: 20px;
+    }
+
+    .vip-card-new:hover {
+        transform: translateX(0);
+    }
+
+    .vip-card-header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .vip-icon-new {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .vip-card-title h3 {
+        font-size: 1.1rem;
+    }
+
+    .vip-capacity {
+        font-size: 0.8rem;
+    }
+
+    .vip-price-new {
+        width: 100%;
+        text-align: left;
+        margin-left: 0;
+        margin-top: 5px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .price-amount {
+        font-size: 1.6rem;
+    }
+
+    .old-price-small {
+        font-size: 0.85rem;
+    }
+
+    .vip-perks-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .vip-perks-list li {
+        font-size: 0.85rem;
+    }
+
+    .vip-book-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 14px 25px;
+    }
+
+    .popular-badge {
+        top: -10px;
+        right: 20px;
+        padding: 5px 15px;
+        font-size: 0.7rem;
+    }
+
     /* Hero Ultra Responsive */
     .hero-side-info {
         display: none;
@@ -3486,8 +3580,93 @@ footer {
         justify-content: center;
     }
 
+    /* VIP Section - Small Mobile */
+    .vip-showcase {
+        padding: 0 10px;
+    }
+
+    .vip-image-side {
+        max-height: 220px;
+        border-radius: 12px;
+    }
+
+    .vip-floating-badge {
+        bottom: 10px;
+        left: 10px;
+        padding: 8px 14px;
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .vip-floating-badge i {
+        font-size: 1rem;
+    }
+
+    .vip-card-new {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .vip-card-header {
+        gap: 12px;
+    }
+
+    .vip-icon-new {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .vip-card-title {
+        flex: 1;
+    }
+
+    .vip-card-title h3 {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+
+    .vip-capacity {
+        font-size: 0.75rem;
+    }
+
+    .vip-price-new {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .price-amount {
+        font-size: 1.4rem;
+    }
+
+    .old-price-small {
+        font-size: 0.8rem;
+    }
+
     .vip-perks-list {
         grid-template-columns: 1fr;
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .vip-perks-list li {
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .vip-book-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+
+    .popular-badge {
+        top: -8px;
+        right: 15px;
+        padding: 4px 12px;
+        font-size: 0.65rem;
     }
 
     .countdown-item {
