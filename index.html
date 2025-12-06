@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAISON B - Discothèque | Bar | Clubbing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== POP-UP WELCOME (Au chargement) ========== -->
+    <div id="welcome-popup" class="popup-overlay">
+        <div class="popup-container welcome-popup">
+            <button class="popup-close"><i class="fas fa-times"></i></button>
+            <div class="popup-visual">
+                <div class="popup-bg-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-couple-dancing-in-a-disco-4809-large.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="popup-content-overlay">
+                    <div class="popup-badge-hot">HOT</div>
+                    <span class="popup-date">VENDREDI 20 DÉCEMBRE</span>
+                    <h2 class="popup-title glitch-text" data-text="DJ MARKO">DJ MARKO</h2>
+                    <p class="popup-subtitle">LIVE SET EXCLUSIF</p>
+                    <div class="popup-countdown-mini">
+                        <div class="mini-timer"><span id="popup-days">14</span>J</div>
+                        <div class="mini-timer"><span id="popup-hours">08</span>H</div>
+                        <div class="mini-timer"><span id="popup-mins">32</span>M</div>
+                    </div>
+                    <div class="popup-cta-group">
+                        <a href="#billetterie" class="popup-cta primary">
+                            <i class="fas fa-ticket"></i> RÉSERVER - 25€
+                        </a>
+                        <a href="#events" class="popup-cta secondary">En savoir +</a>
+                    </div>
+                    <div class="popup-promo">
+                        <i class="fas fa-gift"></i> CODE PROMO: <span>MAISONB20</span> = -20%
+                    </div>
+                </div>
+            </div>
+            <div class="popup-silhouette"></div>
+        </div>
+    </div>
+
+    <!-- ========== POP-UP SCROLL (Après 1 min) ========== -->
+    <div id="scroll-popup" class="popup-overlay">
+        <div class="popup-container scroll-popup sexy-frame">
+            <button class="popup-close"><i class="fas fa-times"></i></button>
+            <div class="popup-split">
+                <div class="popup-image-side">
+                    <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=600&h=800&fit=crop" alt="VIP Experience">
+                    <div class="image-overlay-text">
+                        <span>EXPÉRIENCE</span>
+                        <strong>VIP</strong>
+                    </div>
+                </div>
+                <div class="popup-text-side">
+                    <div class="vip-icon-popup"><i class="fas fa-crown"></i></div>
+                    <h2>SOIRÉE VIP</h2>
+                    <p>Accès exclusif, bouteilles premium, service personnalisé</p>
+                    <ul class="vip-perks">
+                        <li><i class="fas fa-check-circle"></i> Entrée coupe-file</li>
+                        <li><i class="fas fa-check-circle"></i> Table privée</li>
+                        <li><i class="fas fa-check-circle"></i> Bouteille offerte</li>
+                        <li><i class="fas fa-check-circle"></i> Hôtesse dédiée</li>
+                    </ul>
+                    <div class="vip-price-popup">
+                        <span class="old-price">400€</span>
+                        <span class="new-price">299€</span>
+                        <span class="discount-badge">-25%</span>
+                    </div>
+                    <a href="#reservations" class="popup-cta primary full-width">
+                        <i class="fas fa-crown"></i> RÉSERVER VIP
+                    </a>
+                    <p class="limited-text"><i class="fas fa-fire"></i> Plus que 3 tables disponibles !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== BANNIÈRE D'ANNONCE DÉFILANTE ========== -->
+    <div id="announcement-bar">
+        <div class="announcement-content">
+            <span class="announcement-item"><i class="fas fa-fire"></i> VENDREDI 20 DÉC - DJ MARKO EN LIVE</span>
+            <span class="announcement-item"><i class="fas fa-champagne-glasses"></i> TABLES VIP -25% CETTE SEMAINE</span>
+            <span class="announcement-item"><i class="fas fa-ticket"></i> PRÉVENTES OUVERTES - CODE: MAISONB20</span>
+            <span class="announcement-item"><i class="fas fa-star"></i> SAMEDI 21 DÉC - NEON PARTY</span>
+            <span class="announcement-item"><i class="fas fa-fire"></i> VENDREDI 20 DÉC - DJ MARKO EN LIVE</span>
+            <span class="announcement-item"><i class="fas fa-champagne-glasses"></i> TABLES VIP -25% CETTE SEMAINE</span>
+            <span class="announcement-item"><i class="fas fa-ticket"></i> PRÉVENTES OUVERTES - CODE: MAISONB20</span>
+            <span class="announcement-item"><i class="fas fa-star"></i> SAMEDI 21 DÉC - NEON PARTY</span>
+        </div>
+    </div>
+
+    <!-- ========== HEADER ========== -->
+    <header id="main-header">
+        <div class="logo">
+            <a href="/">MAISON <span class="accent-color">B</span></a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#events">Événements</a></li>
+                <li><a href="#reservations">VIP</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#billetterie" class="cta-header primary-cta pulse-btn">Billetterie</a>
+    </header>
+
+    <!-- ========== HERO SECTION - ULTRAMODERN ========== -->
+    <section id="hero">
+        <!-- Video Background -->
+        <div class="hero-video-bg">
+            <video autoplay muted loop playsinline>
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-silhouette-of-a-couple-dancing-in-a-disco-4809-large.mp4" type="video/mp4">
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+
+        <!-- Disco Spotlights -->
+        <div class="disco-spotlights">
+            <div class="spotlight-beam beam-1"></div>
+            <div class="spotlight-beam beam-2"></div>
+            <div class="spotlight-beam beam-3"></div>
+            <div class="spotlight-beam beam-4"></div>
+            <div class="spotlight-beam beam-5"></div>
+            <div class="spotlight-beam beam-6"></div>
+        </div>
+
+        <!-- Ambient Glow -->
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+
+        <!-- Grid Pattern -->
+        <div class="hero-grid-pattern"></div>
+
+        <!-- Main Content -->
+        <div class="hero-content-ultra">
+            <div class="hero-top-line">
+                <span class="line-accent"></span>
+                <span class="hero-location"><i class="fas fa-map-marker-alt"></i> PARIS</span>
+                <span class="line-accent"></span>
+            </div>
+
+            <div class="hero-title-wrapper">
+                <h1 class="hero-main-title">
+                    <span class="title-word title-word-1">MAISON</span>
+                    <span class="title-word title-word-2">B<span class="title-dot">.</span></span>
+                </h1>
+            </div>
+
+            <div class="hero-tagline-wrapper">
+                <div class="tagline-line"></div>
+                <p class="hero-tagline-ultra">L'ÉLÉVATION DE VOS NUITS</p>
+                <div class="tagline-line"></div>
+            </div>
+
+            <div class="hero-features">
+                <div class="feature-item">
+                    <span class="feature-number">500+</span>
+                    <span class="feature-text">Places</span>
+                </div>
+                <div class="feature-divider"></div>
+                <div class="feature-item">
+                    <span class="feature-number">150</span>
+                    <span class="feature-text">Events/an</span>
+                </div>
+                <div class="feature-divider"></div>
+                <div class="feature-item">
+                    <span class="feature-number">50+</span>
+                    <span class="feature-text">DJs</span>
+                </div>
+            </div>
+
+            <div class="hero-cta-ultra">
+                <a href="#reservations" class="cta-ultra primary">
+                    <span class="cta-text">EXPÉRIENCE VIP</span>
+                    <span class="cta-icon"><i class="fas fa-crown"></i></span>
+                    <span class="cta-bg"></span>
+                </a>
+                <a href="#events" class="cta-ultra secondary">
+                    <span class="cta-text">VOIR LES EVENTS</span>
+                    <span class="cta-icon"><i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Side Info -->
+        <div class="hero-side-info left">
+            <span class="side-text vertical-text">SINCE 2015</span>
+        </div>
+        <div class="hero-side-info right">
+            <div class="social-vertical">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <!-- Bottom Scroll -->
+        <div class="hero-bottom">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+
+        <!-- Corner Accents -->
+        <div class="corner-accent top-left"></div>
+        <div class="corner-accent top-right"></div>
+        <div class="corner-accent bottom-left"></div>
+        <div class="corner-accent bottom-right"></div>
+    </section>
+
+    <!-- ========== SECTION ÉVÉNEMENTS COMPLÈTE ========== -->
+    <section id="events">
+        <div class="section-header">
+            <span class="section-tag neon-tag">CALENDRIER</span>
+            <h2><i class="fas fa-calendar-star"></i> Nos Événements</h2>
+            <p class="section-subtitle">Les soirées les plus hot de Paris</p>
+        </div>
+
+        <!-- Event Principal / Featured -->
+        <div class="featured-event-card sexy-frame">
+            <div class="featured-event-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-dj-playing-in-a-club-with-colorful-lights-4465-large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="featured-event-overlay"></div>
+            <div class="featured-event-content">
+                <div class="event-badges">
+                    <span class="badge-hot"><i class="fas fa-fire"></i> HOT</span>
+                    <span class="badge-exclusive">EXCLUSIF</span>
+                </div>
+                <span class="event-category">TECH HOUSE</span>
+                <h3 class="event-title-big">DJ MARKO</h3>
+                <p class="event-subtitle-big">LIVE SET EXCLUSIF</p>
+                <div class="event-meta-row">
+                    <span><i class="far fa-calendar"></i> Vendredi 20 Décembre 2025</span>
+                    <span><i class="far fa-clock"></i> 23h00 - 06h00</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Main Room</span>
+                </div>
+                <p class="event-description">
+                    Préparez-vous pour LA soirée de l'année ! DJ Marko, figure emblématique de la scène Tech House internationale,
+                    s'empare des platines pour une nuit électrique. Production visuelle 3D, son Funktion-One,
+                    et une ambiance qui va faire trembler les murs.
+                </p>
+                <div class="event-lineup">
+                    <span class="lineup-title">LINE-UP:</span>
+                    <div class="lineup-artists">
+                        <div class="artist-chip">
+                            <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=50&h=50&fit=crop" alt="DJ Marko">
+                            <span>DJ Marko</span>
+                        </div>
+                        <div class="artist-chip">
+                            <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=50&h=50&fit=crop" alt="Nina K">
+                            <span>Nina K</span>
+                        </div>
+                        <div class="artist-chip">
+                            <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=50&h=50&fit=crop" alt="Alex B">
+                            <span>Alex B</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="countdown-main" class="countdown-big" data-event-date="2025-12-20T23:00:00">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="days-main">00</div>
+                        <div class="countdown-label">Jours</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="hours-main">00</div>
+                        <div class="countdown-label">Heures</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="mins-main">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-separator">:</div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="secs-main">00</div>
+                        <div class="countdown-label">Secondes</div>
+                    </div>
+                </div>
+                <div class="event-pricing">
+                    <div class="price-option">
+                        <span class="price-label">Prévente</span>
+                        <span class="price-value">25€</span>
+                    </div>
+                    <div class="price-option">
+                        <span class="price-label">Sur place</span>
+                        <span class="price-value">35€</span>
+                    </div>
+                    <div class="price-option featured-price">
+                        <span class="price-label">VIP Table</span>
+                        <span class="price-value">299€</span>
+                    </div>
+                </div>
+                <div class="event-cta-row">
+                    <a href="#billetterie" class="cta-button primary-cta glow-effect">
+                        <i class="fas fa-ticket"></i> ACHETER BILLET
+                    </a>
+                    <a href="#reservations" class="cta-button secondary-cta">
+                        <i class="fas fa-crown"></i> TABLE VIP
+                    </a>
+                    <button class="share-btn"><i class="fas fa-share-alt"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grille des événements à venir -->
+        <h3 class="events-subtitle"><i class="fas fa-bolt"></i> Prochains Événements</h3>
+        <div class="events-grid">
+            <!-- Event Card 1 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&h=350&fit=crop" alt="Neon Party">
+                    <div class="event-card-date">
+                        <span class="day">21</span>
+                        <span class="month">DÉC</span>
+                    </div>
+                    <div class="event-card-badges">
+                        <span class="badge-new">NEW</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">ELECTRO • HOUSE</span>
+                    <h4>NEON PARTY</h4>
+                    <p>Plongez dans un univers fluorescent avec les meilleurs sons electro du moment.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 23h - 06h</span>
+                        <span><i class="fas fa-euro-sign"></i> 20€</span>
+                    </div>
+                    <a href="#" class="event-card-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Event Card 2 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=500&h=350&fit=crop" alt="Deep House Night">
+                    <div class="event-card-date">
+                        <span class="day">27</span>
+                        <span class="month">DÉC</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">DEEP HOUSE</span>
+                    <h4>DEEP SENSATIONS</h4>
+                    <p>Une soirée tout en profondeur avec les grooves les plus sensuels de la scène.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 23h - 06h</span>
+                        <span><i class="fas fa-euro-sign"></i> 22€</span>
+                    </div>
+                    <a href="#" class="event-card-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Event Card 3 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=500&h=350&fit=crop" alt="NYE Party">
+                    <div class="event-card-date">
+                        <span class="day">31</span>
+                        <span class="month">DÉC</span>
+                    </div>
+                    <div class="event-card-badges">
+                        <span class="badge-hot"><i class="fas fa-fire"></i></span>
+                        <span class="badge-soldout">SOLD OUT</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">NOUVEL AN</span>
+                    <h4>NYE 2026</h4>
+                    <p>La plus grande soirée du Nouvel An à Paris. Champagne, confettis et magie.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 22h - 08h</span>
+                        <span><i class="fas fa-euro-sign"></i> 80€</span>
+                    </div>
+                    <a href="#" class="event-card-btn disabled">Complet</a>
+                </div>
+            </article>
+
+            <!-- Event Card 4 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=500&h=350&fit=crop" alt="Ladies Night">
+                    <div class="event-card-date">
+                        <span class="day">03</span>
+                        <span class="month">JAN</span>
+                    </div>
+                    <div class="event-card-badges">
+                        <span class="badge-ladies">LADIES</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">R&B • HIP-HOP</span>
+                    <h4>LADIES NIGHT</h4>
+                    <p>Entrée gratuite pour les femmes jusqu'à minuit. Ambiance R&B et Hip-Hop.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 23h - 05h</span>
+                        <span><i class="fas fa-female"></i> Gratuit</span>
+                    </div>
+                    <a href="#" class="event-card-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Event Card 5 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=500&h=350&fit=crop" alt="Techno Underground">
+                    <div class="event-card-date">
+                        <span class="day">10</span>
+                        <span class="month">JAN</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">TECHNO</span>
+                    <h4>UNDERGROUND SESSION</h4>
+                    <p>Retour aux sources avec une soirée 100% techno dans notre salle secrète.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 00h - 08h</span>
+                        <span><i class="fas fa-euro-sign"></i> 18€</span>
+                    </div>
+                    <a href="#" class="event-card-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Event Card 6 -->
+            <article class="event-card modern-frame">
+                <div class="event-card-image">
+                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=500&h=350&fit=crop" alt="Afro House">
+                    <div class="event-card-date">
+                        <span class="day">17</span>
+                        <span class="month">JAN</span>
+                    </div>
+                    <div class="event-card-badges">
+                        <span class="badge-new">NEW</span>
+                    </div>
+                </div>
+                <div class="event-card-content">
+                    <span class="event-card-category">AFRO HOUSE</span>
+                    <h4>AFRICAN VIBES</h4>
+                    <p>Voyage musical au cœur de l'Afrique avec les meilleurs DJs afro house.</p>
+                    <div class="event-card-meta">
+                        <span><i class="far fa-clock"></i> 23h - 06h</span>
+                        <span><i class="fas fa-euro-sign"></i> 20€</span>
+                    </div>
+                    <a href="#" class="event-card-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </div>
+
+        <div class="events-cta-center">
+            <a href="#" class="cta-button secondary-cta big-cta">
+                <i class="fas fa-calendar-alt"></i> VOIR TOUT LE CALENDRIER
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== SECTION BLOG COMPLÈTE ========== -->
+    <section id="blog">
+        <div class="section-header">
+            <span class="section-tag neon-tag">ACTUALITÉS</span>
+            <h2><i class="fas fa-newspaper"></i> Le Mag' MAISON B</h2>
+            <p class="section-subtitle">News, interviews, aftermovies et backstages</p>
+        </div>
+
+        <!-- Featured Blog Post (Full Width Video) -->
+        <article class="blog-featured sexy-frame">
+            <div class="blog-featured-media">
+                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=600&fit=crop">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-people-partying-at-a-night-club-4344-large.mp4" type="video/mp4">
+                </video>
+                <div class="play-overlay">
+                    <button class="play-big-btn"><i class="fas fa-play"></i></button>
+                </div>
+            </div>
+            <div class="blog-featured-content">
+                <div class="blog-meta-top">
+                    <span class="blog-category video-cat"><i class="fas fa-video"></i> AFTERMOVIE</span>
+                    <span class="blog-date"><i class="far fa-calendar-alt"></i> 15 Déc 2025</span>
+                    <span class="blog-views"><i class="far fa-eye"></i> 12.5K vues</span>
+                </div>
+                <h3>AFTERMOVIE : Soirée "NEON DREAMS" - Une nuit magique</h3>
+                <p>Revivez les moments forts de notre dernière soirée événement. Lumières, danse, émotions...
+                   tout y était pour une nuit inoubliable. Plus de 500 personnes ont vibré au son de nos DJs résidents.</p>
+                <div class="blog-author">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=50&h=50&fit=crop" alt="Author">
+                    <div class="author-info">
+                        <span class="author-name">Sarah M.</span>
+                        <span class="author-role">Social Media Manager</span>
+                    </div>
+                </div>
+                <a href="#" class="read-more-btn">
+                    <span>Regarder la vidéo</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Blog Categories Filter -->
+        <div class="blog-filters-bar">
+            <button class="filter-pill active" data-filter="all">
+                <i class="fas fa-th"></i> Tout
+            </button>
+            <button class="filter-pill" data-filter="video">
+                <i class="fas fa-video"></i> Vidéos
+            </button>
+            <button class="filter-pill" data-filter="photo">
+                <i class="fas fa-camera"></i> Photos
+            </button>
+            <button class="filter-pill" data-filter="interview">
+                <i class="fas fa-microphone"></i> Interviews
+            </button>
+            <button class="filter-pill" data-filter="news">
+                <i class="fas fa-newspaper"></i> News
+            </button>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="blog-masonry">
+            <!-- Blog Card 1 - Interview -->
+            <article class="blog-card modern-frame" data-category="interview">
+                <div class="blog-card-media">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=400&fit=crop" alt="Interview DJ Marko">
+                    <span class="blog-card-category"><i class="fas fa-microphone"></i> Interview</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 12 Déc 2025</span>
+                        <span><i class="far fa-clock"></i> 8 min</span>
+                    </div>
+                    <h4>Interview exclusive : DJ Marko nous dévoile ses secrets</h4>
+                    <p>Rencontre avec l'artiste international avant sa venue à la Maison B. Il nous parle de son parcours, ses inspirations...</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 342</span>
+                            <span><i class="far fa-comment"></i> 28</span>
+                        </div>
+                        <a href="#" class="blog-card-link">Lire <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card 2 - Photo Gallery -->
+            <article class="blog-card modern-frame tall-card" data-category="photo">
+                <div class="blog-card-media gallery-preview">
+                    <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=500&h=600&fit=crop" alt="Photo Gallery">
+                    <div class="gallery-count"><i class="fas fa-images"></i> +24 photos</div>
+                    <span class="blog-card-category"><i class="fas fa-camera"></i> Galerie</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 10 Déc 2025</span>
+                    </div>
+                    <h4>Les plus belles photos de novembre</h4>
+                    <p>Retrouvez les meilleurs clichés de nos soirées du mois dernier.</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 567</span>
+                        </div>
+                        <a href="#" class="blog-card-link">Voir <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card 3 - Video -->
+            <article class="blog-card modern-frame" data-category="video">
+                <div class="blog-card-media video-preview">
+                    <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=500&h=350&fit=crop" alt="DJ Set">
+                    <div class="video-duration">12:34</div>
+                    <div class="play-icon-card"><i class="fas fa-play"></i></div>
+                    <span class="blog-card-category"><i class="fas fa-video"></i> Vidéo</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 8 Déc 2025</span>
+                        <span><i class="far fa-eye"></i> 5.2K</span>
+                    </div>
+                    <h4>LIVE SET : Nina K enflamme le dancefloor</h4>
+                    <p>Extrait de 12 minutes du set explosif de notre DJ résidente.</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 234</span>
+                        </div>
+                        <a href="#" class="blog-card-link">Regarder <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card 4 - News -->
+            <article class="blog-card modern-frame" data-category="news">
+                <div class="blog-card-media">
+                    <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=500&h=350&fit=crop" alt="News">
+                    <span class="blog-card-category"><i class="fas fa-newspaper"></i> News</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 5 Déc 2025</span>
+                        <span><i class="far fa-clock"></i> 3 min</span>
+                    </div>
+                    <h4>Nouveau système son : L'expérience MAISON B passe au niveau supérieur</h4>
+                    <p>Découvrez notre tout nouveau système Funktion-One pour une qualité sonore exceptionnelle.</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 189</span>
+                            <span><i class="far fa-comment"></i> 45</span>
+                        </div>
+                        <a href="#" class="blog-card-link">Lire <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card 5 - Video Vertical -->
+            <article class="blog-card modern-frame" data-category="video">
+                <div class="blog-card-media video-preview">
+                    <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=500&h=350&fit=crop" alt="Behind the scenes">
+                    <div class="video-duration">3:45</div>
+                    <div class="play-icon-card"><i class="fas fa-play"></i></div>
+                    <span class="blog-card-category"><i class="fas fa-video"></i> Backstage</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 3 Déc 2025</span>
+                        <span><i class="far fa-eye"></i> 8.9K</span>
+                    </div>
+                    <h4>BACKSTAGE : Dans les coulisses de la Maison B</h4>
+                    <p>Une plongée exclusive dans les préparatifs de nos soirées.</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 456</span>
+                        </div>
+                        <a href="#" class="blog-card-link">Regarder <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Card 6 - Playlist -->
+            <article class="blog-card modern-frame playlist-card" data-category="news">
+                <div class="blog-card-media">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500&h=350&fit=crop" alt="Playlist">
+                    <div class="spotify-badge"><i class="fab fa-spotify"></i></div>
+                    <span class="blog-card-category"><i class="fas fa-music"></i> Playlist</span>
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span><i class="far fa-calendar"></i> 1 Déc 2025</span>
+                        <span><i class="fas fa-music"></i> 50 tracks</span>
+                    </div>
+                    <h4>PLAYLIST : Top 50 des sons de décembre</h4>
+                    <p>Notre sélection des tracks qui font vibrer le club ce mois-ci.</p>
+                    <div class="blog-card-footer">
+                        <div class="blog-reactions">
+                            <span><i class="far fa-heart"></i> 892</span>
+                        </div>
+                        <a href="#" class="blog-card-link spotify-link"><i class="fab fa-spotify"></i> Écouter</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="blog-load-more">
+            <button class="load-more-btn neon-border">
+                <span>Charger plus d'articles</span>
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section sexy-frame">
+            <div class="newsletter-content">
+                <div class="newsletter-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3>NEWSLETTER VIP</h3>
+                <p>Reçois en avant-première les infos sur nos événements, des codes promo exclusifs et des invitations privées.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Ton email..." required>
+                    <button type="submit" class="newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+                <span class="newsletter-note"><i class="fas fa-lock"></i> Pas de spam, promis.</span>
+            </div>
+            <div class="newsletter-visual">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=300&fit=crop" alt="Newsletter">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALERIE IMMERSIVE ========== -->
+    <section id="gallery">
+        <div class="section-header">
+            <span class="section-tag neon-tag">AMBIANCE</span>
+            <h2><i class="fas fa-camera-retro"></i> L'Univers MAISON B</h2>
+            <p class="section-subtitle">Vivez l'expérience avant d'y être</p>
+        </div>
+
+        <div class="gallery-mosaic">
+            <div class="gallery-item gi-1" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1571266028243-3716f02d2d2e?w=800&h=600&fit=crop" alt="Club ambiance">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>Main Room</span>
+                </div>
+            </div>
+            <div class="gallery-item gi-2" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400&h=400&fit=crop" alt="DJ Set">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>DJ Booth</span>
+                </div>
+            </div>
+            <div class="gallery-item gi-3" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=400&h=400&fit=crop" alt="Dance floor">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>Dancefloor</span>
+                </div>
+            </div>
+            <div class="gallery-item gi-4" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=400&h=400&fit=crop" alt="VIP Area">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>VIP Lounge</span>
+                </div>
+            </div>
+            <div class="gallery-item gi-5" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=400&h=600&fit=crop" alt="Lights">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>Light Show</span>
+                </div>
+            </div>
+            <div class="gallery-item gi-6" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop" alt="Crowd">
+                <div class="gallery-hover">
+                    <i class="fas fa-expand"></i>
+                    <span>The Crowd</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION VIP ========== -->
+    <section id="reservations">
+        <div class="section-header">
+            <span class="section-tag neon-tag">EXPÉRIENCE PREMIUM</span>
+            <h2><i class="fas fa-crown"></i> Réservation VIP</h2>
+            <p class="section-subtitle">Vivez une expérience inoubliable</p>
+        </div>
+
+        <div class="vip-showcase">
+            <div class="vip-image-side">
+                <img src="https://images.unsplash.com/photo-1545128485-c400e7702796?w=600&h=800&fit=crop" alt="VIP Experience">
+                <div class="vip-floating-badge">
+                    <i class="fas fa-gem"></i>
+                    <span>PREMIUM</span>
+                </div>
+            </div>
+            <div class="vip-cards-side">
+                <!-- VIP Card 1 -->
+                <div class="vip-card-new">
+                    <div class="vip-card-header">
+                        <div class="vip-icon-new"><i class="fas fa-star"></i></div>
+                        <div class="vip-card-title">
+                            <h3>TABLE STANDARD</h3>
+                            <span class="vip-capacity"><i class="fas fa-users"></i> 4 personnes</span>
+                        </div>
+                        <div class="vip-price-new">
+                            <span class="price-amount">150€</span>
+                        </div>
+                    </div>
+                    <ul class="vip-perks-list">
+                        <li><i class="fas fa-check"></i> Table réservée</li>
+                        <li><i class="fas fa-check"></i> 1 bouteille au choix</li>
+                        <li><i class="fas fa-check"></i> Entrée prioritaire</li>
+                        <li><i class="fas fa-check"></i> Softs illimités</li>
+                    </ul>
+                    <a href="#contact" class="vip-book-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- VIP Card 2 - Featured -->
+                <div class="vip-card-new featured">
+                    <div class="popular-badge">POPULAIRE</div>
+                    <div class="vip-card-header">
+                        <div class="vip-icon-new"><i class="fas fa-crown"></i></div>
+                        <div class="vip-card-title">
+                            <h3>TABLE VIP</h3>
+                            <span class="vip-capacity"><i class="fas fa-users"></i> 6 personnes</span>
+                        </div>
+                        <div class="vip-price-new">
+                            <span class="old-price-small">400€</span>
+                            <span class="price-amount">299€</span>
+                        </div>
+                    </div>
+                    <ul class="vip-perks-list">
+                        <li><i class="fas fa-check"></i> Table premium vue DJ</li>
+                        <li><i class="fas fa-check"></i> 2 bouteilles premium</li>
+                        <li><i class="fas fa-check"></i> Entrée VIP coupe-file</li>
+                        <li><i class="fas fa-check"></i> Service dédié</li>
+                        <li><i class="fas fa-check"></i> Vestiaire offert</li>
+                    </ul>
+                    <a href="#contact" class="vip-book-btn glow-effect">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- VIP Card 3 -->
+                <div class="vip-card-new ultra">
+                    <div class="vip-card-header">
+                        <div class="vip-icon-new"><i class="fas fa-gem"></i></div>
+                        <div class="vip-card-title">
+                            <h3>CARRÉ PRIVÉ</h3>
+                            <span class="vip-capacity"><i class="fas fa-users"></i> 10 personnes</span>
+                        </div>
+                        <div class="vip-price-new">
+                            <span class="price-amount">599€</span>
+                        </div>
+                    </div>
+                    <ul class="vip-perks-list">
+                        <li><i class="fas fa-check"></i> Espace privatif fermé</li>
+                        <li><i class="fas fa-check"></i> Open bar premium</li>
+                        <li><i class="fas fa-check"></i> Entrée privée</li>
+                        <li><i class="fas fa-check"></i> Hôtesse dédiée</li>
+                        <li><i class="fas fa-check"></i> Menu VIP</li>
+                        <li><i class="fas fa-check"></i> Parking offert</li>
+                    </ul>
+                    <a href="#contact" class="vip-book-btn">Réserver <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION CONTACT ========== -->
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag neon-tag">NOUS TROUVER</span>
+            <h2><i class="fas fa-map-marker-alt"></i> Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card sexy-frame">
+                <div class="info-block">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Adresse</h4>
+                        <p>123 Avenue de la Nuit<br>75008 Paris</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="info-text">
+                        <h4>Horaires</h4>
+                        <p>Vendredi & Samedi<br>23h00 - 06h00</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-text">
+                        <h4>Réservations</h4>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>contact@maisonb.fr</p>
+                    </div>
+                </div>
+                <div class="social-bar">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-snapchat-ghost"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form-new sexy-frame" id="contact-form">
+                <h3><i class="fas fa-paper-plane"></i> Envoyez-nous un message</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder=" " required>
+                        <label>Votre nom</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder=" " required>
+                        <label>Votre email</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select name="subject" required>
+                        <option value="">Sujet de votre demande</option>
+                        <option value="reservation">Réservation VIP</option>
+                        <option value="privatisation">Privatisation</option>
+                        <option value="partenariat">Partenariat</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder=" " rows="4" required></textarea>
+                    <label>Votre message</label>
+                </div>
+                <button type="submit" class="submit-btn glow-effect">
+                    <span>Envoyer</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="/" class="footer-logo">MAISON <span class="accent-color">B</span></a>
+                <p class="footer-tagline">L'élévation de vos nuits</p>
+                <p class="footer-address">
+                    <i class="fas fa-map-marker-alt"></i> 123 Avenue de la Nuit, 75008 Paris
+                </p>
+            </div>
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#events">Événements</a></li>
+                    <li><a href="#reservations">Réservations VIP</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-social-col">
+                <h4>Suivez-nous</h4>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-spotify"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="app-badges">
+                    <span>Bientôt disponible</span>
+                    <div class="store-badges">
+                        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" height="35">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MAISON B. Tous droits réservés.</p>
+            <p class="alcohol-warning"><i class="fas fa-exclamation-triangle"></i> L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+        </div>
+    </footer>
+
+    <!-- ========== LIGHTBOX ========== -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close"><i class="fas fa-times"></i></button>
+        <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <img src="" alt="Image agrandie">
+    </div>
+
+    <!-- ========== FLOATING SOCIAL BAR ========== -->
+    <div class="floating-social">
+        <a href="#" class="float-social-btn instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="float-social-btn tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="float-social-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <!-- ========== AUDIO VISUALIZER BAR ========== -->
+    <div class="audio-visualizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
