@@ -2486,15 +2486,20 @@ nav ul li a:hover::before {
 }
 
 .vip-showcase {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     gap: 50px;
     max-width: 1400px;
     margin: 0 auto;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
 }
 
 .vip-image-side {
     width: 400px;
+    -ms-flex-negative: 0;
     flex-shrink: 0;
     position: relative;
     border-radius: var(--border-radius);
@@ -2505,6 +2510,8 @@ nav ul li a:hover::before {
     width: 100%;
     height: auto;
     display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
 
 .vip-floating-badge {
@@ -2514,7 +2521,11 @@ nav ul li a:hover::before {
     background: var(--gradient-gold);
     padding: 15px 25px;
     border-radius: var(--border-radius);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
     color: var(--color-dark);
@@ -2526,10 +2537,32 @@ nav ul li a:hover::before {
 }
 
 .vip-cards-side {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
     flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 25px;
+}
+
+/* Fallback pour les navigateurs sans support de gap */
+.vip-cards-side > * {
+    margin-bottom: 25px;
+}
+
+.vip-cards-side > *:last-child {
+    margin-bottom: 0;
+}
+
+@supports (gap: 25px) {
+    .vip-cards-side > * {
+        margin-bottom: 0;
+    }
 }
 
 .vip-card-new {
@@ -2569,10 +2602,29 @@ nav ul li a:hover::before {
 }
 
 .vip-card-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
+}
+
+/* Fallback pour gap dans flexbox */
+.vip-card-header > * {
+    margin-right: 20px;
+}
+
+.vip-card-header > *:last-child {
+    margin-right: 0;
+}
+
+@supports (gap: 20px) {
+    .vip-card-header > * {
+        margin-right: 0;
+    }
 }
 
 .vip-icon-new {
@@ -2580,16 +2632,31 @@ nav ul li a:hover::before {
     height: 60px;
     background: rgba(255, 0, 64, 0.1);
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     font-size: 1.5rem;
     color: var(--color-accent);
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 .vip-card-new.ultra .vip-icon-new {
     background: rgba(255, 215, 0, 0.1);
     color: var(--color-gold);
+}
+
+.vip-card-title {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 0;
 }
 
 .vip-card-title h3 {
@@ -2609,6 +2676,8 @@ nav ul li a:hover::before {
 .vip-price-new {
     margin-left: auto;
     text-align: right;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
 }
 
 .old-price-small {
@@ -2631,7 +2700,9 @@ nav ul li a:hover::before {
 
 .vip-perks-list {
     list-style: none;
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 10px 1fr;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 20px;
@@ -2640,7 +2711,11 @@ nav ul li a:hover::before {
 .vip-perks-list li {
     font-size: 0.9rem;
     color: var(--color-secondary-text);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     gap: 10px;
 }
@@ -3310,10 +3385,15 @@ footer {
     .vip-showcase {
         gap: 30px;
         padding: 0 15px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .vip-image-side {
         max-height: 300px;
+        width: 100%;
     }
 
     .vip-floating-badge {
@@ -3329,6 +3409,7 @@ footer {
 
     .vip-cards-side {
         gap: 20px;
+        width: 100%;
     }
 
     .vip-card-new {
@@ -3336,11 +3417,19 @@ footer {
     }
 
     .vip-card-new:hover {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
         transform: translateX(0);
     }
 
     .vip-card-header {
-        flex-wrap: wrap;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
         gap: 15px;
     }
 
@@ -3348,6 +3437,10 @@ footer {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+
+    .vip-card-title {
+        width: 100%;
     }
 
     .vip-card-title h3 {
@@ -3365,7 +3458,11 @@ footer {
         margin-top: 5px;
         padding-top: 15px;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 15px;
     }
@@ -3376,19 +3473,25 @@ footer {
 
     .old-price-small {
         font-size: 0.85rem;
+        display: inline-block;
     }
 
     .vip-perks-list {
-        grid-template-columns: 1fr;
-        gap: 8px;
+        display: block;
     }
 
     .vip-perks-list li {
         font-size: 0.85rem;
+        margin-bottom: 8px;
     }
 
     .vip-book-btn {
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
         justify-content: center;
         padding: 14px 25px;
     }
