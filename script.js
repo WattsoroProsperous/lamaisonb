@@ -133,20 +133,100 @@ document.addEventListener('DOMContentLoaded', function() {
     initCountdown();
 
     // ==========================================
-    // HEADER SCROLL EFFECT
+    // HEADER & ANNOUNCEMENT BAR SCROLL EFFECT
     // ==========================================
 
     const header = document.getElementById('main-header');
+    const announcementBar = document.getElementById('announcement-bar');
+    const scrollBtn = document.getElementById('back-to-top');
+    const floatingSocial = document.querySelector('.floating-social');
+    const heroSection = document.getElementById('hero');
+    const heroHeight = heroSection ? heroSection.offsetHeight : window.innerHeight;
+
+    // Update scroll button icon and state
+    const updateScrollButton = (scrollY) => {
+        if (!scrollBtn) return;
+
+        const scrollBtnIcon = scrollBtn.querySelector('i');
+
+        if (scrollY < heroHeight - 100) {
+            // On hero section - show as "scroll down" button
+            scrollBtn.classList.add('visible');
+            scrollBtn.classList.add('scroll-down-mode');
+            if (scrollBtnIcon) {
+                scrollBtnIcon.className = 'fas fa-arrow-down';
+            }
+        } else if (scrollY > 500) {
+            // Past hero - show as "scroll up" button
+            scrollBtn.classList.add('visible');
+            scrollBtn.classList.remove('scroll-down-mode');
+            if (scrollBtnIcon) {
+                scrollBtnIcon.className = 'fas fa-arrow-up';
+            }
+        } else {
+            // In between - hide button
+            scrollBtn.classList.remove('visible');
+            scrollBtn.classList.remove('scroll-down-mode');
+        }
+    };
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.pageYOffset;
 
+        // Header scroll effect
         if (currentScrollY > 100) {
             header.classList.add('scrolled');
+            // Hide announcement bar when scrolled
+            if (announcementBar) {
+                announcementBar.classList.add('hidden');
+            }
         } else {
             header.classList.remove('scrolled');
+            // Show announcement bar when at top
+            if (announcementBar) {
+                announcementBar.classList.remove('hidden');
+            }
         }
+
+        // Floating social buttons - hide on hero section
+        if (floatingSocial) {
+            if (currentScrollY < heroHeight - 100) {
+                floatingSocial.classList.add('hidden-on-hero');
+            } else {
+                floatingSocial.classList.remove('hidden-on-hero');
+            }
+        }
+
+        // Update scroll button state
+        updateScrollButton(currentScrollY);
     });
+
+    // Initial state check
+    updateScrollButton(window.pageYOffset);
+
+    // Scroll button click handler - scroll up or down depending on state
+    if (scrollBtn) {
+        scrollBtn.addEventListener('click', () => {
+            if (scrollBtn.classList.contains('scroll-down-mode')) {
+                // Scroll down to events section
+                const eventsSection = document.getElementById('events');
+                if (eventsSection) {
+                    eventsSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.scrollTo({
+                        top: heroHeight,
+                        behavior: 'smooth'
+                    });
+                }
+            } else {
+                // Scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
 
     // ==========================================
     // MOBILE MENU
@@ -465,9 +545,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // DYNAMIC SPOTLIGHT COLOR EFFECTS
     // ==========================================
 
-    const heroSection = document.getElementById('hero');
-    if (heroSection) {
-        const glows = heroSection.querySelectorAll('.ambient-glow');
+    const heroSectionGlow = document.getElementById('hero');
+    if (heroSectionGlow) {
+        const glows = heroSectionGlow.querySelectorAll('.ambient-glow');
         let hue = 0;
 
         setInterval(() => {
@@ -631,26 +711,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, { rootMargin: '50px' });
 
         lazyImages.forEach(img => imageObserver.observe(img));
-    }
-
-    // ==========================================
-    // FLOATING SOCIAL BUTTONS
-    // ==========================================
-
-    const floatingSocial = document.querySelector('.floating-social');
-    if (floatingSocial) {
-        floatingSocial.style.opacity = '0';
-        floatingSocial.style.transform = 'translateY(-50%) translateX(100px)';
-        floatingSocial.style.transition = 'all 0.5s ease';
-
-        let socialVisible = false;
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 500 && !socialVisible) {
-                floatingSocial.style.opacity = '1';
-                floatingSocial.style.transform = 'translateY(-50%) translateX(0)';
-                socialVisible = true;
-            }
-        });
     }
 
     // ==========================================
