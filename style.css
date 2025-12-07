@@ -3530,17 +3530,69 @@ footer {
     }
 
     .hero-features {
-        flex-direction: column;
-        gap: 25px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        gap: 0;
+        background: rgba(0, 0, 0, 0.5);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0;
+        margin: 0 15px 40px;
+        overflow: hidden;
+    }
+
+    .feature-item {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: center;
+        padding: 18px 8px;
+        position: relative;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .feature-item:last-of-type {
+        border-right: none;
+    }
+
+    .feature-number {
+        font-size: 1.4rem;
+        margin-bottom: 4px;
+        background: linear-gradient(135deg, #fff 0%, #ff0040 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .feature-text {
+        font-size: 0.55rem;
+        letter-spacing: 1px;
     }
 
     .feature-divider {
-        width: 60px;
-        height: 1px;
+        display: none;
     }
 
     .hero-cta-ultra {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
         flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         gap: 15px;
     }
@@ -3681,6 +3733,25 @@ footer {
     .popup-cta {
         width: 100%;
         justify-content: center;
+    }
+
+    /* Hero Features - Small Mobile */
+    .hero-features {
+        margin: 0 10px 35px;
+        border-radius: 12px;
+    }
+
+    .feature-item {
+        padding: 15px 5px;
+    }
+
+    .feature-number {
+        font-size: 1.2rem;
+    }
+
+    .feature-text {
+        font-size: 0.5rem;
+        letter-spacing: 0.5px;
     }
 
     /* VIP Section - Small Mobile */
